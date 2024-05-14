@@ -1,19 +1,10 @@
-const EventEmitter = require("events");
-const express = require("express");
+const EventEmmiter = require("events")
 
-const app = express();
-const event = new EventEmitter();
+const event = new EventEmmiter();
 
-app.get('/', (req, res) => {
-    // Send HTML containing a button to the client
-    res.send("<button>clickMe</button>");
-});
 
-// Setup event listener
-event.on("Hello", () => {
-    console.log("button clicked");
-});
+event.on("sayHelo", ()=>{
+    console.log("Hello User I am Bhaanoo Vishwakarma");
+})
 
-app.listen(3000, () => {
-    console.log("App is listening at 3000");
-});
+event.emit("sayHello")
